@@ -53,8 +53,8 @@
 /* Define if we have MPG123
 #define HAS_MPG123 */
 
-/* Define if we have DUMB
-#define HAS_DUMB */
+/* Define if we have DUMB */
+#define HAS_DUMB
 
 /* Define if we have external Timidity */
 /* #undef HAS_TIMIDITY */

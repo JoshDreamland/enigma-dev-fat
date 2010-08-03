@@ -7,14 +7,14 @@ echo "" >> Makefile;
 for file in *.c ;
   do
   {
-    printf "\$(DEST)/${file%.c}.o: $file" >> Makefile;
+    printf "\$(DEST)/ogg_${file%.c}.o: $file" >> Makefile;
     for i in `c_incl $file | gawk '/\/usr\/include/ { next } { print } '`;
     do
       printf " $i" >> Makefile;
     done;
     echo "" >> Makefile;
     
-    echo "	gcc -c $file		-o \$(DEST)/${file%.c}.o \$(FLAGS)"  >> Makefile;
+    echo "	gcc -c $file		-o \$(DEST)/ogg_${file%.c}.o \$(FLAGS)"  >> Makefile;
   };
   done;
 
@@ -22,7 +22,7 @@ echo "" >> Makefile;
 
   printf "avail: " >> Makefile;
   for file in *.c ;
-    do printf "\$(DEST)/${file%.c}.o " >> Makefile; 
+    do printf "\$(DEST)/ogg_${file%.c}.o " >> Makefile; 
     done;
   echo "" >> Makefile;
 

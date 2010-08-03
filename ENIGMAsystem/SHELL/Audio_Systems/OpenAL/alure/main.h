@@ -17,7 +17,7 @@
 #include <mpg123.h>
 #endif
 #ifdef HAS_DUMB
-#include <dumb.h>
+#include "../dumb/include/dumb.h"
 #endif
 
 

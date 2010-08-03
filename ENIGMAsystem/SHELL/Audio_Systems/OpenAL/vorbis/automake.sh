@@ -8,7 +8,7 @@ cd ./lib/
 for file in *.c ;
   do
   {
-    printf "\$(DEST)/${file%.c}.o: lib/$file" >> ../Makefile;
+    printf "\$(DEST)/vorbis_${file%.c}.o: lib/$file" >> ../Makefile;
     for i in `c_incl $file | gawk '/\/usr\/include/ { next } { print } '`;
     do
 	if [ -e $i ] ; then
@@ -16,7 +16,7 @@ for file in *.c ;
     done;
     echo "" >> ../Makefile;
     
-    echo "	gcc -c lib/$file		-o \$(DEST)/${file%.c}.o"  >> ../Makefile;
+    echo "	gcc -c lib/$file		-o \$(DEST)/vorbis_${file%.c}.o"  >> ../Makefile;
   };
   done;
 
@@ -24,7 +24,7 @@ echo "" >> ../Makefile;
 
   printf "avail: " >> ../Makefile;
   for file in *.c ;
-    do printf "\$(DEST)/${file%.c}.o " >> ../Makefile; 
+    do printf "\$(DEST)/vorbis_${file%.c}.o " >> ../Makefile; 
     done;
   echo "" >> ../Makefile;
 

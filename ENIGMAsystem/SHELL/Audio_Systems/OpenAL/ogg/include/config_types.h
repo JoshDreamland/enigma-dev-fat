@@ -2,6 +2,7 @@
 #define __CONFIG_TYPES_H__
 
 // This file is included when nothing else works.
+// So if this file doesn't work, I want to hear about it.
 
 #include <stdint.h>
  typedef int16_t ogg_int16_t;
