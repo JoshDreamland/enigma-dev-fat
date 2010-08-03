@@ -8,7 +8,7 @@
 #include <sndfile.h>
 #endif
 #ifdef HAS_VORBISFILE
-#include <vorbis/vorbisfile.h>
+#include "../vorbis/include/vorbisfile.h"
 #endif
 #ifdef HAS_FLAC
 #include <FLAC/all.h>

@@ -21,7 +21,7 @@
 #include "../../ogg/include/ogg.h"
 #include "os.h"
 #include "misc.h"
-#include "vorbis/codec.h"
+#include "../include/codec.h"
 #include "codebook.h"
 #include "scales.h"
 
