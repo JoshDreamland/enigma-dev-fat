@@ -1,8 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include "AL/alure.h"
-#include "alext.h"
+#include "include/AL/alure.h"
+#include "include/alext.h"
 
 #ifdef HAS_SNDFILE
 #include <sndfile.h>

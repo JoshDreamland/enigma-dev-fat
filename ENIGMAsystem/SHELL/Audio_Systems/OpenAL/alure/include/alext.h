@@ -1,9 +1,7 @@
 #ifndef AL_ALEXT_H
 #define AL_ALEXT_H
 
-#ifdef __cplusplus
 extern "C" {
-#endif
 
 #ifndef AL_LOKI_IMA_ADPCM_format
 #define AL_LOKI_IMA_ADPCM_format 1
@@ -88,8 +86,6 @@ extern "C" {
 #define AL_FORMAT_STEREO_IMA4                    0x1301
 #endif
 
-#ifdef __cplusplus
 }
-#endif
 
 #endif

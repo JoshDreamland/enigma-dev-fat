@@ -1,0 +1,9 @@
+This folder contains the essentials of libvorbis-1.3.1.
+
+The contents were obtained by downloading the source distribution
+of the Vorbis codec and removing any unnecessary components and a
+pair of source files. The removed sources included an erroneous C
+source marked as a historical record, and the file that serves to
+encode vorbis sounds. It turns out that said encoder was the only
+file that would not compile without running the 15000 line config
+script.

@@ -34,6 +34,12 @@ namespace enigma
   // This function is called at the beginning of the game.
   int audiosystem_initialize(); // In it, the audio system can make its startup calls.
   
+  // This function is called multiple times each frame, and can be invoked by the API in sound playing calls.
+  void audiosystem_update(); // In it, the audio system can track what is happening with each sound.
+  
+  // This function allocates memory for sounds to avoid segfault.
+  void sound_safety_override(); // It is called if resource load fails.
+  
   // This function is called for each sound in the game's module.
   int sound_add_from_buffer(int id, void* buffer, size_t size); // It should add the sound under the given ID.
   

@@ -1,0 +1,4 @@
+This folder contains libogg-1.2.
+This small collection of sources is NOT a vorbis reader. Understand that OGG
+is a container, nothing more. Vorbis is the library that handles compression
+and decoding. OGG is its dependency.
