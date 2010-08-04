@@ -65,3 +65,10 @@ clean:
 
 
 
+
+static: $(DEST)/libvorbis.a
+
+static: $(DEST)/libvorbis.a
+
+static: $(DEST)/libvorbis.a
+
