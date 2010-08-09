@@ -35,5 +35,5 @@ echo "" >> Makefile;
 echo "static: \$(DEST)/libogg.a" >> Makefile;
 echo "" >> Makefile;
 echo "clean:" >> Makefile;
-echo "" >> Makefile;
+echo "	\$(CREMOVE) .objs\$(SLASHC)*" >> Makefile;
 

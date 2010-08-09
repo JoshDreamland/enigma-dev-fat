@@ -52,4 +52,4 @@ $(DEST)/libvorbis.a: odir .objs/vorbis_analysis.o .objs/vorbis_bitrate.o .objs/v
 static: $(DEST)/libvorbis.a
 
 clean:
-
+	$(CREMOVE) .objs$(SLASHC)*

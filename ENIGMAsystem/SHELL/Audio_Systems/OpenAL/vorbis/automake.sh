@@ -37,5 +37,5 @@ echo "" >> ../Makefile;
 echo "static: \$(DEST)/libvorbis.a" >> ../Makefile;
 echo "" >> ../Makefile;
 echo "clean:" >> ../Makefile;
-echo "" >> ../Makefile;
+echo "	\$(CREMOVE) .objs\$(SLASHC)*" >> ../Makefile;
 
