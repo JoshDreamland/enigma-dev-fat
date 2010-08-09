@@ -1,10 +1,12 @@
 #ifndef AL_ALURE_H
 #define AL_ALURE_H
 
+#include "../../config.h"
+
 #if !defined(ALC_VERSION_0_1) || !defined(AL_VERSION_1_0)
 #ifdef _WIN32
-#include <al.h>
-#include <alc.h>
+#include "../../../../../../additional/al/include/alc.h"
+#include "../../../../../../additional/al/include/al.h"
 #elif defined(__APPLE__)
 #include <OpenAL/alc.h>
 #include <OpenAL/al.h>
@@ -21,7 +23,7 @@ extern "C" {
 #ifndef ALURE_STATIC_LIBRARY
  #if defined(_WIN32)
   #if defined(ALURE_BUILD_LIBRARY)
-   #define ALURE_API __declspec(dllexport)
+   #define ALURE_API /*__declspec(dllexport)*/
   #else
    #define ALURE_API __declspec(dllimport)
   #endif
@@ -37,7 +39,7 @@ extern "C" {
 #endif
 
 #if defined(_WIN32)
- #define ALURE_APIENTRY __cdecl
+ #define ALURE_APIENTRY /*__cdecl*/
 
  #include <sys/types.h>
  typedef __int64 alureInt64;
