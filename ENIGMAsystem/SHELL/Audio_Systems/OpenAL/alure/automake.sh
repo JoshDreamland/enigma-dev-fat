@@ -34,5 +34,5 @@ echo "" >> Makefile;
 echo "static: \$(DEST)/libalure.a" >> Makefile;
 echo "" >> Makefile;
 echo "clean:" >> Makefile;
-echo "	\$(CREMOVE) .objs\$(SLASHC)*" >> Makefile;
+echo "	\$(CREMOVE).objs\$(SLASHC)*\$(ENDCREMOVE)" >> Makefile;
 

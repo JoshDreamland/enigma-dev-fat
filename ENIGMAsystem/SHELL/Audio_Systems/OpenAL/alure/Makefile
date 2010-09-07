@@ -22,4 +22,4 @@ $(DEST)/libalure.a: odir .objs/alure.o .objs/buffer.o .objs/istream.o .objs/stre
 static: $(DEST)/libalure.a
 
 clean:
-	$(CREMOVE) .objs$(SLASHC)*
+	$(CREMOVE).objs$(SLASHC)*$(ENDCREMOVE)

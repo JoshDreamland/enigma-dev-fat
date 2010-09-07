@@ -14,4 +14,4 @@ $(DEST)/libogg.a: odir .objs/ogg_bitwise.o .objs/ogg_framing.o
 static: $(DEST)/libogg.a
 
 clean:
-	$(CREMOVE) .objs$(SLASHC)*
+	$(CREMOVE).objs$(SLASHC)*$(ENDCREMOVE)

@@ -88,4 +88,4 @@ $(DEST)/libdumb.a: odir .objs/dumb_atexit.o .objs/dumb_duhlen.o .objs/dumb_duhta
 static: $(DEST)/libdumb.a
 
 clean:
-	$(CREMOVE) .objs$(SLASHC)*
+	$(CREMOVE).objs$(SLASHC)*$(ENDCREMOVE)
