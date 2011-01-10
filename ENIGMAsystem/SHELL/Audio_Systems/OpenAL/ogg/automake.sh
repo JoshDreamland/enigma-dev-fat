@@ -18,7 +18,7 @@ for file in *.c ;
     done;
     echo "" >> Makefile;
     
-    echo "	gcc -c $file		-o .objs/ogg_${file%.c}.o \$(FLAGS)"  >> Makefile;
+    echo "	\$(CC) -c $file		-o .objs/ogg_${file%.c}.o \$(FLAGS)"  >> Makefile;
   };
   done;
 
@@ -35,5 +35,5 @@ echo "" >> Makefile;
 echo "static: \$(DEST)/libogg.a" >> Makefile;
 echo "" >> Makefile;
 echo "clean:" >> Makefile;
-echo "	\$(CREMOVE).objs\$(SLASHC)*\$(ENDCREMOVE)" >> Makefile;
+echo "	-rm .objs/*" >> Makefile;
 

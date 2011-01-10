@@ -20,7 +20,7 @@ for file in *.c ;
     done;
     echo "" >> ../Makefile;
     
-    echo "	gcc -c lib/$file		-o .objs/vorbis_${file%.c}.o"  >> ../Makefile;
+    echo "	\$(CC) -c lib/$file		-o .objs/vorbis_${file%.c}.o"  >> ../Makefile;
   };
   done;
 
@@ -37,5 +37,5 @@ echo "" >> ../Makefile;
 echo "static: \$(DEST)/libvorbis.a" >> ../Makefile;
 echo "" >> ../Makefile;
 echo "clean:" >> ../Makefile;
-echo "	\$(CREMOVE).objs\$(SLASHC)*\$(ENDCREMOVE)" >> ../Makefile;
+echo "	-rm .objs/*" >> ../Makefile;
 

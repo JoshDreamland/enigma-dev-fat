@@ -4,17 +4,17 @@ odir:
 	-mkdir .objs
 
 .objs/alure.o: alure.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h include/alext.h ../vorbis/include/vorbisfile.h ../vorbis/include/codec.h ../ogg/include/ogg.h ../ogg/include/os_types.h ../ogg/include/config_types.h ../dumb/include/dumb.h
-	g++ -c alure.cpp		-o .objs/alure.o $(FLAGS)
+	$(CXX) -c alure.cpp		-o .objs/alure.o $(FLAGS)
 .objs/buffer.o: buffer.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h include/alext.h ../vorbis/include/vorbisfile.h ../vorbis/include/codec.h ../ogg/include/ogg.h ../ogg/include/os_types.h ../ogg/include/config_types.h ../dumb/include/dumb.h
-	g++ -c buffer.cpp		-o .objs/buffer.o $(FLAGS)
+	$(CXX) -c buffer.cpp		-o .objs/buffer.o $(FLAGS)
 .objs/istream.o: istream.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h include/alext.h ../vorbis/include/vorbisfile.h ../vorbis/include/codec.h ../ogg/include/ogg.h ../ogg/include/os_types.h ../ogg/include/config_types.h ../dumb/include/dumb.h
-	g++ -c istream.cpp		-o .objs/istream.o $(FLAGS)
+	$(CXX) -c istream.cpp		-o .objs/istream.o $(FLAGS)
 .objs/stream.o: stream.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h include/alext.h ../vorbis/include/vorbisfile.h ../vorbis/include/codec.h ../ogg/include/ogg.h ../ogg/include/os_types.h ../ogg/include/config_types.h ../dumb/include/dumb.h
-	g++ -c stream.cpp		-o .objs/stream.o $(FLAGS)
+	$(CXX) -c stream.cpp		-o .objs/stream.o $(FLAGS)
 .objs/streamdec.o: streamdec.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h include/alext.h ../vorbis/include/vorbisfile.h ../vorbis/include/codec.h ../ogg/include/ogg.h ../ogg/include/os_types.h ../ogg/include/config_types.h ../dumb/include/dumb.h
-	g++ -c streamdec.cpp		-o .objs/streamdec.o $(FLAGS)
+	$(CXX) -c streamdec.cpp		-o .objs/streamdec.o $(FLAGS)
 .objs/streamplay.o: streamplay.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h include/alext.h ../vorbis/include/vorbisfile.h ../vorbis/include/codec.h ../ogg/include/ogg.h ../ogg/include/os_types.h ../ogg/include/config_types.h ../dumb/include/dumb.h
-	g++ -c streamplay.cpp		-o .objs/streamplay.o $(FLAGS)
+	$(CXX) -c streamplay.cpp		-o .objs/streamplay.o $(FLAGS)
 
 $(DEST)/libalure.a: odir .objs/alure.o .objs/buffer.o .objs/istream.o .objs/stream.o .objs/streamdec.o .objs/streamplay.o 
 	ar r $(DEST)/libalure.a .objs/*.o
@@ -22,4 +22,4 @@ $(DEST)/libalure.a: odir .objs/alure.o .objs/buffer.o .objs/istream.o .objs/stre
 static: $(DEST)/libalure.a
 
 clean:
-	$(CREMOVE).objs$(SLASHC)*$(ENDCREMOVE)
+	-rm .objs/*

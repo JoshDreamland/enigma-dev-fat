@@ -18,7 +18,7 @@ for file in *.cpp ;
     done;
     echo "" >> Makefile;
     
-    echo "	g++ -c $file		-o .objs/${file%.cpp}.o \$(FLAGS)"  >> Makefile;
+    echo "	\$(CXX) -c $file		-o .objs/${file%.cpp}.o \$(FLAGS)"  >> Makefile;
   };
   done;
 
@@ -34,5 +34,5 @@ echo "" >> Makefile;
 echo "static: \$(DEST)/libalure.a" >> Makefile;
 echo "" >> Makefile;
 echo "clean:" >> Makefile;
-echo "	\$(CREMOVE).objs\$(SLASHC)*\$(ENDCREMOVE)" >> Makefile;
+echo "	-rm .objs/*" >> Makefile;
 

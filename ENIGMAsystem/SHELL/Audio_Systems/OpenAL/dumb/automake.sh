@@ -19,7 +19,7 @@ for file in src/*/*.c ;
     done;
     echo "" >> Makefile;
     
-    echo "	gcc -c $file		-o .objs/${npf%.c}.o"  >> Makefile;
+    echo "	\$(CC) -c $file		-o .objs/${npf%.c}.o"  >> Makefile;
   };
   done;
 
@@ -37,5 +37,5 @@ echo "" >> Makefile;
 echo "static: \$(DEST)/libdumb.a" >> Makefile;
 echo "" >> Makefile;
 echo "clean:" >> Makefile;
-echo "	\$(CREMOVE).objs\$(SLASHC)*\$(ENDCREMOVE)" >> Makefile;
+echo "	-rm .objs/*" >> Makefile;
 
