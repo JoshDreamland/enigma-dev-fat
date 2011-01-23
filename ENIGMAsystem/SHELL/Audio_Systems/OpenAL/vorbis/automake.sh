@@ -19,7 +19,7 @@ for file in *.c ;
     done;
     echo "" >> ../Makefile;
     
-    echo "	gcc -c lib/$file		-o .objs/vorbis_${file%.c}.o \$(FLAGS)"  >> ../Makefile;
+    echo "	gcc -c lib/$file		-o .objs/vorbis_${file%.c}.o \$(ECFLAGS)"  >> ../Makefile;
   };
   done;
 

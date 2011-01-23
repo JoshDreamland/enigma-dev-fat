@@ -17,7 +17,7 @@ for file in *.c ;
     done;
     echo "" >> Makefile;
     
-    echo "	gcc -c $file		-o .objs/ogg_${file%.c}.o \$(FLAGS)"  >> Makefile;
+    echo "	gcc -c $file		-o .objs/ogg_${file%.c}.o \$(ECFLAGS)"  >> Makefile;
   };
   done;
 

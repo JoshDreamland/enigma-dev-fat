@@ -18,7 +18,7 @@ for file in src/*/*.c ;
     done;
     echo "" >> Makefile;
     
-    echo "	gcc -c $file		-o .objs/dumb_${npf%.c}.o \$(FLAGS)"  >> Makefile;
+    echo "	gcc -c $file		-o .objs/dumb_${npf%.c}.o \$(ECFLAGS)"  >> Makefile;
   };
   done;
 
