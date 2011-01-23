@@ -4,9 +4,9 @@ odir:
 	-mkdir .objs
 
 .objs/ogg_bitwise.o: bitwise.c include/ogg.h include/os_types.h include/config_types.h
-	$(CC) -c bitwise.c		-o .objs/ogg_bitwise.o $(FLAGS)
+	gcc -c bitwise.c		-o .objs/ogg_bitwise.o $(FLAGS)
 .objs/ogg_framing.o: framing.c include/ogg.h include/os_types.h include/config_types.h
-	$(CC) -c framing.c		-o .objs/ogg_framing.o $(FLAGS)
+	gcc -c framing.c		-o .objs/ogg_framing.o $(FLAGS)
 
 $(DEST)/libogg.a: odir .objs/ogg_bitwise.o .objs/ogg_framing.o 
 	ar r $(DEST)/libogg.a .objs/*.o

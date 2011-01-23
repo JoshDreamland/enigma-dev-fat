@@ -4,47 +4,47 @@ odir:
 	-mkdir .objs
 
 .objs/vorbis_analysis.o: lib/analysis.c lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/../include/codec.h lib/codec_internal.h lib/envelope.h lib/mdct.h lib/codebook.h lib/psy.h lib/smallft.h lib/backends.h lib/bitrate.h lib/os.h lib/misc.h lib/highlevel.h lib/registry.h lib/scales.h
-	$(CC) -c lib/analysis.c		-o .objs/vorbis_analysis.o
+	gcc -c lib/analysis.c		-o .objs/vorbis_analysis.o
 .objs/vorbis_bitrate.o: lib/bitrate.c lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/../include/codec.h lib/codec_internal.h lib/envelope.h lib/mdct.h lib/codebook.h lib/psy.h lib/smallft.h lib/backends.h lib/bitrate.h lib/os.h lib/misc.h lib/highlevel.h
-	$(CC) -c lib/bitrate.c		-o .objs/vorbis_bitrate.o
+	gcc -c lib/bitrate.c		-o .objs/vorbis_bitrate.o
 .objs/vorbis_block.o: lib/block.c lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/../include/codec.h lib/codec_internal.h lib/envelope.h lib/mdct.h lib/codebook.h lib/psy.h lib/smallft.h lib/backends.h lib/bitrate.h lib/os.h lib/misc.h lib/highlevel.h lib/window.h lib/lpc.h lib/registry.h
-	$(CC) -c lib/block.c		-o .objs/vorbis_block.o
+	gcc -c lib/block.c		-o .objs/vorbis_block.o
 .objs/vorbis_codebook.o: lib/codebook.c lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/../include/codec.h lib/codebook.h lib/scales.h lib/os.h lib/misc.h
-	$(CC) -c lib/codebook.c		-o .objs/vorbis_codebook.o
+	gcc -c lib/codebook.c		-o .objs/vorbis_codebook.o
 .objs/vorbis_envelope.o: lib/envelope.c lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/../include/codec.h lib/codec_internal.h lib/envelope.h lib/mdct.h lib/codebook.h lib/psy.h lib/smallft.h lib/backends.h lib/bitrate.h lib/os.h lib/misc.h lib/highlevel.h lib/scales.h
-	$(CC) -c lib/envelope.c		-o .objs/vorbis_envelope.o
+	gcc -c lib/envelope.c		-o .objs/vorbis_envelope.o
 .objs/vorbis_floor0.o: lib/floor0.c lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/../include/codec.h lib/codec_internal.h lib/envelope.h lib/mdct.h lib/codebook.h lib/psy.h lib/smallft.h lib/backends.h lib/bitrate.h lib/os.h lib/misc.h lib/highlevel.h lib/registry.h lib/lpc.h lib/lsp.h lib/scales.h
-	$(CC) -c lib/floor0.c		-o .objs/vorbis_floor0.o
+	gcc -c lib/floor0.c		-o .objs/vorbis_floor0.o
 .objs/vorbis_floor1.o: lib/floor1.c lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/../include/codec.h lib/codec_internal.h lib/envelope.h lib/mdct.h lib/codebook.h lib/psy.h lib/smallft.h lib/backends.h lib/bitrate.h lib/os.h lib/misc.h lib/highlevel.h lib/registry.h lib/scales.h
-	$(CC) -c lib/floor1.c		-o .objs/vorbis_floor1.o
+	gcc -c lib/floor1.c		-o .objs/vorbis_floor1.o
 .objs/vorbis_info.o: lib/info.c lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/../include/codec.h lib/codec_internal.h lib/envelope.h lib/mdct.h lib/codebook.h lib/psy.h lib/smallft.h lib/backends.h lib/bitrate.h lib/os.h lib/misc.h lib/highlevel.h lib/registry.h lib/window.h
-	$(CC) -c lib/info.c		-o .objs/vorbis_info.o
+	gcc -c lib/info.c		-o .objs/vorbis_info.o
 .objs/vorbis_lookup.o: lib/lookup.c lib/lookup.h lib/lookup_data.h lib/os.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/misc.h lib/../include/codec.h lib/../../ogg/include/ogg.h
-	$(CC) -c lib/lookup.c		-o .objs/vorbis_lookup.o
+	gcc -c lib/lookup.c		-o .objs/vorbis_lookup.o
 .objs/vorbis_lpc.o: lib/lpc.c lib/os.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/misc.h lib/../include/codec.h lib/../../ogg/include/ogg.h lib/smallft.h lib/lpc.h lib/scales.h
-	$(CC) -c lib/lpc.c		-o .objs/vorbis_lpc.o
+	gcc -c lib/lpc.c		-o .objs/vorbis_lpc.o
 .objs/vorbis_lsp.o: lib/lsp.c lib/lsp.h lib/os.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/misc.h lib/../include/codec.h lib/../../ogg/include/ogg.h lib/lookup.h lib/scales.h lib/lookup.c lib/lookup_data.h
-	$(CC) -c lib/lsp.c		-o .objs/vorbis_lsp.o
+	gcc -c lib/lsp.c		-o .objs/vorbis_lsp.o
 .objs/vorbis_mapping0.o: lib/mapping0.c lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/../include/codec.h lib/codec_internal.h lib/envelope.h lib/mdct.h lib/codebook.h lib/psy.h lib/smallft.h lib/backends.h lib/bitrate.h lib/os.h lib/misc.h lib/highlevel.h lib/window.h lib/registry.h lib/lpc.h lib/lsp.h lib/scales.h
-	$(CC) -c lib/mapping0.c		-o .objs/vorbis_mapping0.o
+	gcc -c lib/mapping0.c		-o .objs/vorbis_mapping0.o
 .objs/vorbis_mdct.o: lib/mdct.c lib/../include/codec.h lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/mdct.h lib/os.h lib/misc.h
-	$(CC) -c lib/mdct.c		-o .objs/vorbis_mdct.o
+	gcc -c lib/mdct.c		-o .objs/vorbis_mdct.o
 .objs/vorbis_psy.o: lib/psy.c lib/../include/codec.h lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/codec_internal.h lib/envelope.h lib/mdct.h lib/codebook.h lib/psy.h lib/smallft.h lib/backends.h lib/bitrate.h lib/os.h lib/misc.h lib/highlevel.h lib/masking.h lib/lpc.h lib/scales.h
-	$(CC) -c lib/psy.c		-o .objs/vorbis_psy.o
+	gcc -c lib/psy.c		-o .objs/vorbis_psy.o
 .objs/vorbis_registry.o: lib/registry.c lib/../include/codec.h lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/codec_internal.h lib/envelope.h lib/mdct.h lib/codebook.h lib/psy.h lib/smallft.h lib/backends.h lib/bitrate.h lib/os.h lib/misc.h lib/highlevel.h lib/registry.h
-	$(CC) -c lib/registry.c		-o .objs/vorbis_registry.o
+	gcc -c lib/registry.c		-o .objs/vorbis_registry.o
 .objs/vorbis_res0.o: lib/res0.c lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/../include/codec.h lib/codec_internal.h lib/envelope.h lib/mdct.h lib/codebook.h lib/psy.h lib/smallft.h lib/backends.h lib/bitrate.h lib/os.h lib/misc.h lib/highlevel.h lib/registry.h
-	$(CC) -c lib/res0.c		-o .objs/vorbis_res0.o
+	gcc -c lib/res0.c		-o .objs/vorbis_res0.o
 .objs/vorbis_sharedbook.o: lib/sharedbook.c lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/os.h lib/misc.h lib/../include/codec.h lib/codebook.h lib/scales.h
-	$(CC) -c lib/sharedbook.c		-o .objs/vorbis_sharedbook.o
+	gcc -c lib/sharedbook.c		-o .objs/vorbis_sharedbook.o
 .objs/vorbis_smallft.o: lib/smallft.c lib/smallft.h lib/../include/codec.h lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/os.h lib/misc.h
-	$(CC) -c lib/smallft.c		-o .objs/vorbis_smallft.o
+	gcc -c lib/smallft.c		-o .objs/vorbis_smallft.o
 .objs/vorbis_synthesis.o: lib/synthesis.c lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/../include/codec.h lib/codec_internal.h lib/envelope.h lib/mdct.h lib/codebook.h lib/psy.h lib/smallft.h lib/backends.h lib/bitrate.h lib/os.h lib/misc.h lib/highlevel.h lib/registry.h
-	$(CC) -c lib/synthesis.c		-o .objs/vorbis_synthesis.o
+	gcc -c lib/synthesis.c		-o .objs/vorbis_synthesis.o
 .objs/vorbis_vorbisfile.o: lib/vorbisfile.c lib/../include/codec.h lib/../../ogg/include/ogg.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/../include/vorbisfile.h lib/os.h lib/misc.h
-	$(CC) -c lib/vorbisfile.c		-o .objs/vorbis_vorbisfile.o
+	gcc -c lib/vorbisfile.c		-o .objs/vorbis_vorbisfile.o
 .objs/vorbis_window.o: lib/window.c lib/os.h lib/../../ogg/include/os_types.h lib/../../ogg/include/config_types.h lib/misc.h lib/../include/codec.h lib/../../ogg/include/ogg.h
-	$(CC) -c lib/window.c		-o .objs/vorbis_window.o
+	gcc -c lib/window.c		-o .objs/vorbis_window.o
 
 $(DEST)/libvorbis.a: odir .objs/vorbis_analysis.o .objs/vorbis_bitrate.o .objs/vorbis_block.o .objs/vorbis_codebook.o .objs/vorbis_envelope.o .objs/vorbis_floor0.o .objs/vorbis_floor1.o .objs/vorbis_info.o .objs/vorbis_lookup.o .objs/vorbis_lpc.o .objs/vorbis_lsp.o .objs/vorbis_mapping0.o .objs/vorbis_mdct.o .objs/vorbis_psy.o .objs/vorbis_registry.o .objs/vorbis_res0.o .objs/vorbis_sharedbook.o .objs/vorbis_smallft.o .objs/vorbis_synthesis.o .objs/vorbis_vorbisfile.o .objs/vorbis_window.o 
 	ar r $(DEST)/libvorbis.a .objs/*.o

@@ -19,7 +19,7 @@ for file in src/*/*.c ;
     done;
     echo "" >> Makefile;
     
-    echo "	\$(CC) -c $file		-o .objs/${npf%.c}.o"  >> Makefile;
+    echo "	gcc -c $file		-o .objs/${npf%.c}.o"  >> Makefile;
   };
   done;
 
