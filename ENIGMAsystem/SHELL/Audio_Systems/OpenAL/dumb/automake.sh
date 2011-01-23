@@ -1,5 +1,4 @@
-# Call this file from the directory in question if you would like a generic
-# Makefile generated which invokes GCC for each individual file.
+# Makefile generator instantiated from /ENIGMAsystem/SHELL/Developer/.
 
 echo "#Awesome Locally Generated Makefile" > Makefile
 
@@ -19,7 +18,7 @@ for file in src/*/*.c ;
     done;
     echo "" >> Makefile;
     
-    echo "	gcc -c $file		-o .objs/${npf%.c}.o"  >> Makefile;
+    echo "	gcc -c $file		-o .objs/dumb_${npf%.c}.o \$(FLAGS)"  >> Makefile;
   };
   done;
 
