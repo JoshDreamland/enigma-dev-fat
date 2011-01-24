@@ -3,7 +3,7 @@
 echo "#Awesome Locally Generated Makefile" > Makefile
 
 echo "" >> Makefile;
-echo "odir:" >> Makefile;
+echo ".objs:" >> Makefile;
 echo "	-mkdir .objs" >> Makefile;
 echo "" >> Makefile
 
@@ -24,7 +24,7 @@ for file in src/*/*.c ;
 
 echo "" >> Makefile;
 
-  printf "\$(DEST)/libdumb.a: odir " >> Makefile;
+  printf "\$(DEST)/libdumb.a: .objs " >> Makefile;
   for file in src/*/*.c ;
     do npf="dumb_${file##*/}"
     printf ".objs/dumb_${npf%.c}.o " >> Makefile; 
