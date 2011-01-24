@@ -11,7 +11,7 @@ for file in src/*/*.c ;
   do
   {
     npf="dumb_${file##*/}"
-    printf ".objs/${npf%.c}.o: $file" >> Makefile;
+    printf ".objs/dumb_${npf%.c}.o: $file" >> Makefile;
     for i in `c_incl $file | gawk '/\/usr\/include/ { next } { print } '`;
     do
       printf " $i" >> Makefile;
@@ -27,7 +27,7 @@ echo "" >> Makefile;
   printf "\$(DEST)/libdumb.a: odir " >> Makefile;
   for file in src/*/*.c ;
     do npf="dumb_${file##*/}"
-    printf ".objs/${npf%.c}.o " >> Makefile; 
+    printf ".objs/dumb_${npf%.c}.o " >> Makefile; 
     done;
   echo "" >> Makefile;
   echo "	ar r \$(DEST)/libdumb.a .objs/*.o" >> Makefile;
