@@ -38,14 +38,14 @@ static int it_mod_read_pattern(IT_PATTERN *pattern, DUMBFILE *f, int n_channels,
 	if (n_channels == 0) {
 		/* Read the first four channels, leaving gaps for the rest. */
 		for (pos = 0; pos < 64*8*4; pos += 8*4)
-			dumbfile_getnc(buffer + pos, 4*4, f);
+			dumbfile_getnc((char*)buffer + pos, 4*4, f);
 		/* Read the other channels into the gaps we left. */
 		for (pos = 4*4; pos < 64*8*4; pos += 8*4)
-			dumbfile_getnc(buffer + pos, 4*4, f);
+			dumbfile_getnc((char*)buffer + pos, 4*4, f);
 
 		n_channels = 8;
 	} else
-		dumbfile_getnc(buffer, 64 * n_channels * 4, f);
+		dumbfile_getnc((char*)buffer, 64 * n_channels * 4, f);
 
 	if (dumbfile_error(f))
 		return -1;
@@ -131,7 +131,7 @@ If
 the sample name begins with a '#' character (ASCII $23 (35)) then this is
 assumed not to be an instrument name, and is probably a message.
 */
-	dumbfile_getnc(sample->name, 22, f);
+	dumbfile_getnc((char*)sample->name, 22, f);
 	sample->name[22] = 0;
 
 	sample->filename[0] = 0;
@@ -315,7 +315,7 @@ static DUMBFILE *dumbfile_buffer_mod(DUMBFILE *f, unsigned long *fft)
 		return NULL;
 	}
 
-	bm->len = dumbfile_getnc(bm->buffered, MOD_FFT_OFFSET + 4, f);
+	bm->len = dumbfile_getnc((char*)bm->buffered, MOD_FFT_OFFSET + 4, f);
 
 	if (bm->len > 0) {
 		if (bm->len >= MOD_FFT_OFFSET + 4)
@@ -360,7 +360,7 @@ static DUMB_IT_SIGDATA *it_mod_load_sigdata(DUMBFILE *f)
                              full 20 chars in length, it will be null-
                              terminated.
 	*/
-	if (dumbfile_getnc(sigdata->name, 20, f) < 20) {
+	if (dumbfile_getnc((char*)sigdata->name, 20, f) < 20) {
 		free(sigdata);
 		dumbfile_close(f);
 		return NULL;
@@ -488,7 +488,7 @@ static DUMB_IT_SIGDATA *it_mod_load_sigdata(DUMBFILE *f)
 		dumbfile_close(f);
 		return NULL;
 	}
-	if (dumbfile_getnc(sigdata->order, 128, f) < 128) {
+	if (dumbfile_getnc((char*)sigdata->order, 128, f) < 128) {
 		_dumb_it_unload_sigdata(sigdata);
 		dumbfile_close(f);
 		return NULL;
@@ -598,7 +598,7 @@ DUH *dumb_read_mod_quick(DUMBFILE *f)
 	{
 		const char *tag[1][2];
 		tag[0][0] = "TITLE";
-		tag[0][1] = ((DUMB_IT_SIGDATA *)sigdata)->name;
+		tag[0][1] = (char*)((DUMB_IT_SIGDATA *)sigdata)->name;
 		return make_duh(-1, 1, (const char *const (*)[2])tag, 1, &descptr, &sigdata);
 	}
 }

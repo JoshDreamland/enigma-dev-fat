@@ -209,7 +209,7 @@ static int it_xm_read_pattern(IT_PATTERN *pattern, DUMBFILE *f, int n_channels, 
 		return -1;
 	}
 
-	if (dumbfile_getnc(buffer, size, f) < size)
+	if (dumbfile_getnc((char*)buffer, size, f) < size)
 		return -1;
 
 	/* compute number of entries */
@@ -336,7 +336,7 @@ static int it_xm_read_instrument(IT_INSTRUMENT *instrument, XM_INSTRUMENT_EXTRA 
 	 */
 	size = dumbfile_igetl(f);
 
-	dumbfile_getnc(instrument->name, 22, f);
+	dumbfile_getnc((char*)instrument->name, 22, f);
 	instrument->name[22] = 0;
 	instrument->filename[0] = 0;
 	dumbfile_skip(f, 1);  /* Instrument type. Should be 0, but seems random. */
@@ -490,7 +490,7 @@ static int it_xm_read_sample_header(IT_SAMPLE *sample, DUMBFILE *f)
 
 	dumbfile_skip(f, 1);  /* reserved */
 
-	dumbfile_getnc(sample->name, 22, f);
+	dumbfile_getnc((char*)sample->name, 22, f);
 	sample->name[22] = 0;
 
 	sample->filename[0] = 0;
@@ -631,7 +631,7 @@ static DUMB_IT_SIGDATA *it_xm_load_sigdata(DUMBFILE *f)
 		return NULL;
 
 	/* song name */
-	if (dumbfile_getnc(sigdata->name, 20, f) < 20) {
+	if (dumbfile_getnc((char*)sigdata->name, 20, f) < 20) {
 		free(sigdata);
 		return NULL;
 	}
@@ -703,7 +703,7 @@ static DUMB_IT_SIGDATA *it_xm_load_sigdata(DUMBFILE *f)
 		_dumb_it_unload_sigdata(sigdata);
 		return NULL;
 	}
-	dumbfile_getnc(sigdata->order, sigdata->n_orders, f);
+	dumbfile_getnc((char*)sigdata->order, sigdata->n_orders, f);
 	dumbfile_skip(f, 256 - sigdata->n_orders);
 
 	if (dumbfile_error(f)) {
@@ -1001,7 +1001,7 @@ DUH *dumb_read_xm_quick(DUMBFILE *f)
 	{
 		const char *tag[1][2];
 		tag[0][0] = "TITLE";
-		tag[0][1] = ((DUMB_IT_SIGDATA *)sigdata)->name;
+		tag[0][1] = (char*)((DUMB_IT_SIGDATA *)sigdata)->name;
 		return make_duh(-1, 1, (const char *const (*)[2])tag, 1, &descptr, &sigdata);
 	}
 }

@@ -54,7 +54,7 @@ static int it_s3m_read_sample_header(IT_SAMPLE *sample, long *offset, DUMBFILE *
 		/** WARNING: no adlib support */
 	}
 
-	dumbfile_getnc(sample->filename, 13, f);
+	dumbfile_getnc((char*)sample->filename, 13, f);
 	sample->filename[13] = 0;
 
 	*offset = dumbfile_igetw(f) << 4;
@@ -80,7 +80,7 @@ static int it_s3m_read_sample_header(IT_SAMPLE *sample, long *offset, DUMBFILE *
 	/* Skip four unused bytes and three internal variables. */
 	dumbfile_skip(f, 4+2+2+4);
 
-	dumbfile_getnc(sample->name, 28, f);
+	dumbfile_getnc((char*)sample->name, 28, f);
 	sample->name[28] = 0;
 
 	if (type == 0) {
@@ -232,7 +232,7 @@ static int it_s3m_read_pattern(IT_PATTERN *pattern, DUMBFILE *f, unsigned char *
 		pattern->n_entries++;
 		if (b) {
 			if (buflen + used[b] >= 65536) return -1;
-			dumbfile_getnc(buffer + buflen, used[b], f);
+			dumbfile_getnc((char*)buffer + buflen, used[b], f);
 			buflen += used[b];
 		} else {
 			/* End of row */
@@ -386,7 +386,7 @@ static DUMB_IT_SIGDATA *it_s3m_load_sigdata(DUMBFILE *f)
 	sigdata = malloc(sizeof(*sigdata));
 	if (!sigdata) return NULL;
 
-	dumbfile_getnc(sigdata->name, 28, f);
+	dumbfile_getnc((char*)sigdata->name, 28, f);
 	sigdata->name[28] = 0;
 
 	if (dumbfile_getc(f) != 0x1A || dumbfile_getc(f) != 16) {
@@ -495,7 +495,7 @@ static DUMB_IT_SIGDATA *it_s3m_load_sigdata(DUMBFILE *f)
 	}
 
 	/* Orders, byte each, length = sigdata->n_orders (should be even) */
-	dumbfile_getnc(sigdata->order, sigdata->n_orders, f);
+	dumbfile_getnc((char*)sigdata->order, sigdata->n_orders, f);
 	sigdata->restart_position = 0;
 
 	component = malloc(768*sizeof(*component));
@@ -664,7 +664,7 @@ DUH *dumb_read_s3m_quick(DUMBFILE *f)
 	{
 		const char *tag[1][2];
 		tag[0][0] = "TITLE";
-		tag[0][1] = ((DUMB_IT_SIGDATA *)sigdata)->name;
+		tag[0][1] = (char*)((DUMB_IT_SIGDATA *)sigdata)->name;
 		return make_duh(-1, 1, (const char *const (*)[2])tag, 1, &descptr, &sigdata);
 	}
 }
