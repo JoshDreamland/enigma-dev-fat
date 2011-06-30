@@ -95,6 +95,10 @@ static inline void DeleteCriticalSection(CRITICAL_SECTION *cs)
 #include <list>
 #include <algorithm>
 
+#ifdef INCLUDED_FROM_SHELLMAIN
+#error This file is high-impact and should not be included from SHELLmain.cpp.
+#endif
+
 static const union {
     int val;
     char b[sizeof(int)];
