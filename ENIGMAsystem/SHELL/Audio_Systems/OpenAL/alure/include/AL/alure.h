@@ -4,16 +4,18 @@
 #include "../../config.h"
 
 #if !defined(ALC_VERSION_0_1) || !defined(AL_VERSION_1_0)
-#ifdef _WIN32
-#include "../../../../../../additional/al/include/alc.h"
-#include "../../../../../../additional/al/include/al.h"
-#elif defined(__APPLE__)
-#include <OpenAL/alc.h>
-#include <OpenAL/al.h>
-#else
-#include <AL/al.h>
-#include <AL/alc.h>
-#endif
+  #ifdef _WIN32
+    #define AL_NO_PROTOTYPES 1
+    #include "../../../../../../additional/al/include/alc.h"
+    #include "../../../../../../additional/al/include/al.h"
+    #include "../../../wrap_oal.h"
+  #elif defined(__APPLE__)
+    #include <OpenAL/alc.h>
+    #include <OpenAL/al.h>
+  #else
+    #include <AL/al.h>
+    #include <AL/alc.h>
+  #endif
 #endif
 
 #if defined(__cplusplus)
