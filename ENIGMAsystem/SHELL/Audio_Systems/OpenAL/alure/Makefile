@@ -3,17 +3,17 @@
 .objs:
 	-mkdir .objs
 
-.objs/alure.o: alure.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h include/alext.h ../vorbis/include/vorbisfile.h ../vorbis/include/codec.h ../ogg/include/ogg.h ../ogg/include/os_types.h ../ogg/include/config_types.h ../dumb/include/dumb.h
+.objs/alure.o: alure.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h ../wrap_oal.h include/alext.h ../../Codecs/vorbis/include/vorbisfile.h ../../Codecs/vorbis/include/codec.h ../../Codecs/ogg/include/ogg.h ../../Codecs/ogg/include/os_types.h ../../Codecs/ogg/include/config_types.h ../../Codecs/dumb/include/dumb.h
 	$(CXX) -c alure.cpp		-o .objs/alure.o $(ECPPFLAGS)
-.objs/buffer.o: buffer.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h include/alext.h ../vorbis/include/vorbisfile.h ../vorbis/include/codec.h ../ogg/include/ogg.h ../ogg/include/os_types.h ../ogg/include/config_types.h ../dumb/include/dumb.h
+.objs/buffer.o: buffer.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h ../wrap_oal.h include/alext.h ../../Codecs/vorbis/include/vorbisfile.h ../../Codecs/vorbis/include/codec.h ../../Codecs/ogg/include/ogg.h ../../Codecs/ogg/include/os_types.h ../../Codecs/ogg/include/config_types.h ../../Codecs/dumb/include/dumb.h
 	$(CXX) -c buffer.cpp		-o .objs/buffer.o $(ECPPFLAGS)
-.objs/istream.o: istream.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h include/alext.h ../vorbis/include/vorbisfile.h ../vorbis/include/codec.h ../ogg/include/ogg.h ../ogg/include/os_types.h ../ogg/include/config_types.h ../dumb/include/dumb.h
+.objs/istream.o: istream.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h ../wrap_oal.h include/alext.h ../../Codecs/vorbis/include/vorbisfile.h ../../Codecs/vorbis/include/codec.h ../../Codecs/ogg/include/ogg.h ../../Codecs/ogg/include/os_types.h ../../Codecs/ogg/include/config_types.h ../../Codecs/dumb/include/dumb.h
 	$(CXX) -c istream.cpp		-o .objs/istream.o $(ECPPFLAGS)
-.objs/stream.o: stream.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h include/alext.h ../vorbis/include/vorbisfile.h ../vorbis/include/codec.h ../ogg/include/ogg.h ../ogg/include/os_types.h ../ogg/include/config_types.h ../dumb/include/dumb.h
+.objs/stream.o: stream.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h ../wrap_oal.h include/alext.h ../../Codecs/vorbis/include/vorbisfile.h ../../Codecs/vorbis/include/codec.h ../../Codecs/ogg/include/ogg.h ../../Codecs/ogg/include/os_types.h ../../Codecs/ogg/include/config_types.h ../../Codecs/dumb/include/dumb.h
 	$(CXX) -c stream.cpp		-o .objs/stream.o $(ECPPFLAGS)
-.objs/streamdec.o: streamdec.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h include/alext.h ../vorbis/include/vorbisfile.h ../vorbis/include/codec.h ../ogg/include/ogg.h ../ogg/include/os_types.h ../ogg/include/config_types.h ../dumb/include/dumb.h
+.objs/streamdec.o: streamdec.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h ../wrap_oal.h include/alext.h ../../Codecs/vorbis/include/vorbisfile.h ../../Codecs/vorbis/include/codec.h ../../Codecs/ogg/include/ogg.h ../../Codecs/ogg/include/os_types.h ../../Codecs/ogg/include/config_types.h ../../Codecs/dumb/include/dumb.h
 	$(CXX) -c streamdec.cpp		-o .objs/streamdec.o $(ECPPFLAGS)
-.objs/streamplay.o: streamplay.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h include/alext.h ../vorbis/include/vorbisfile.h ../vorbis/include/codec.h ../ogg/include/ogg.h ../ogg/include/os_types.h ../ogg/include/config_types.h ../dumb/include/dumb.h
+.objs/streamplay.o: streamplay.cpp config.h main.h include/AL/alure.h ../../../../additional/al/include/alc.h ../../../../additional/al/include/al.h ../wrap_oal.h include/alext.h ../../Codecs/vorbis/include/vorbisfile.h ../../Codecs/vorbis/include/codec.h ../../Codecs/ogg/include/ogg.h ../../Codecs/ogg/include/os_types.h ../../Codecs/ogg/include/config_types.h ../../Codecs/dumb/include/dumb.h
 	$(CXX) -c streamplay.cpp		-o .objs/streamplay.o $(ECPPFLAGS)
 
 $(DEST)/libalure.a: .objs .objs/alure.o .objs/buffer.o .objs/istream.o .objs/stream.o .objs/streamdec.o .objs/streamplay.o 
