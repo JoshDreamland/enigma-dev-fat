@@ -8,7 +8,7 @@
 #include <sndfile.h>
 #endif
 #ifdef HAS_VORBISFILE
-#include "../../Codecs/vorbis/include/vorbisfile.h"
+#include <vorbis/vorbisfile.h>
 #endif
 #ifdef HAS_FLAC
 #include <FLAC/all.h>
@@ -17,7 +17,7 @@
 #include <mpg123.h>
 #endif
 #ifdef HAS_DUMB
-#include "../../Codecs/dumb/include/dumb.h"
+#include <dumb.h>
 #endif
 
 
