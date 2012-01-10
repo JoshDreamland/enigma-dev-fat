@@ -29,6 +29,7 @@
 
 #include <list>
 #include <vector>
+#include <cstdlib>
 
 #ifdef HAVE_WINDOWS_H
 
@@ -86,7 +87,7 @@ typedef struct {
 static void *StarterFunc(void *ptr)
 {
     ThreadInfo *inf = (ThreadInfo*)ptr;
-    void *ret = (void*)(inf->func(inf->ptr));
+    void *ret = (void*)(ptrdiff_t)(inf->func(inf->ptr));
     return ret;
 }
 
