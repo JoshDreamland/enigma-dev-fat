@@ -1,14 +1,14 @@
 #ifndef AL_ALURE_H
 #define AL_ALURE_H
 
-#include "../../config.h"
+#include "Audio_Systems/OpenAL/alure/config.h"
 
 #if !defined(ALC_VERSION_0_1) || !defined(AL_VERSION_1_0)
   #ifdef _WIN32
     #define AL_NO_PROTOTYPES 1
-    #include "../../../../../../additional/al/include/alc.h"
-    #include "../../../../../../additional/al/include/al.h"
-    #include "../../../wrap_oal.h"
+    #include "additional/al/include/alc.h" // Fix Me: Additional is missing
+    #include "additional/al/include/al.h"
+    #include "Audio_Systems/wrap_oal.h"
   #elif defined(__APPLE__)
     #include <OpenAL/alc.h>
     #include <OpenAL/al.h>
